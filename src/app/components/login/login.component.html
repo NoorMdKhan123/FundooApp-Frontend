@@ -1,0 +1,56 @@
+<div class = "cs-container">
+  <meta charset="UTF-8">
+  <title>Some Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+    <h1>
+        <span class="c1">F</span>
+        <span class="c2">u</span>
+        <span class="c3">n</span>
+        <span class="c4">d</span>
+        <span class="c5">o</span>
+        <span class="c6">o</span> 
+    </h1>
+
+    <h2>Sign in</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" style="border:none">
+    <div class ="tl-container">
+      <mat-form-field  appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput   placeholder="email" formControlName="email">
+      </mat-form-field>
+      <div class = "psw">
+        <button class="btnps">Forgot Email?</button>
+      </div>
+
+      <mat-form-field  appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="password" formControlName="passowrd" >
+        
+       </mat-form-field>
+    </div>
+    
+    <div class = "txt">
+      <p>Not your computer? Use Guest mode to sign in privately.</p>
+      
+    </div>
+    <div class="ca">
+      <button class="btnps">Learn More</button>
+    </div>
+
+    <div class="tca" routerLink="/register"><button class="btnps">Create Account</button></div>
+
+    <div class = "bsd">
+      <button mat-raised-button >Next</button>
+    </div>
+   
+  
+ 
+   </form>
+</div>
+  
+   
+        
+      
+    
