@@ -9,7 +9,7 @@
  </h1>
 
  <h2>Create your Fundoo Account</h2>
- <form [formGroup]="registrationForm" (ngSubmit)="registration()" style="border:none">
+ <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" style="border:none">
 
 <div class="tl-container ">
   <mat-form-field appearance="outline">
@@ -68,7 +68,7 @@
       <button mat-raised-button >Next</button>
     </div>
 
-    <div class="icon">
+    <div class="icon" fxHide.xs>
       <img class= "iconsize"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWhCs4f2YW-VqYSm1zPkcdznlX95UOuiO8tw&usqp=CAU" >
       <p class="b">One account. All of Google<br> working for you.</p>
     </div>

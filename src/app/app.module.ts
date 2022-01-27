@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -12,6 +11,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ForgotemailComponent } from './components/forgotemail/forgotemail.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+ import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+ import {MatIconModule} from '@angular/material/icon';
+import { CreateNoteComponent } from './create-note/create-note.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -23,21 +31,27 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistrationComponent,
     ForgotemailComponent,
-    
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent,
+    CreateNoteComponent
   ],
   imports: [
     
     FormsModule,
     BrowserModule,
     MatInputModule,
-   HttpClientModule,
-  
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    FormsModule,ReactiveFormsModule
+    MatCardModule,
+    FormsModule,ReactiveFormsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

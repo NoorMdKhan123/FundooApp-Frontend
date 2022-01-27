@@ -20,7 +20,7 @@ let httpOptions=
   )
 }
     console.log(reqData);
-    return this.httpService.postService('User/register',reqData, false, httpOptions)
+    return this.httpService.postService('/User/register',reqData, false, httpOptions)
   }
   
   userLogin(reqData:any)
@@ -35,6 +35,37 @@ let httpOptions=
   )
 }
     console.log(reqData);
-    return this.httpService.postService('user/login',reqData, false, httpOptions)
+    return this.httpService.postService('/User/login',reqData, false, httpOptions)
   }
+
+  userForgotPassword(reqData:any)
+{
+let httpOptions=
+{
+headers : new HttpHeaders(
+  {
+    'Content-type':'application/json',
+    Authorization :  'token'
+  
+  }
+)
+}
+  console.log(reqData);
+  return this.httpService.postService('/User/forgotPassword',reqData, false, httpOptions)
+}
+
+userResetPassword(reqData:any, token : any)
+{
+let httpOptions=
+{
+headers : new HttpHeaders(
+  {
+    'Content-type':'application/json',
+    Authorization : 'Beraer ' + token
+  }
+)
+}
+  console.log(reqData);
+  return this.httpService.postService('/User/resetPassword',reqData, true, httpOptions)
+}
 }

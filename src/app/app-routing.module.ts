@@ -4,13 +4,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotemailComponent } from './components/forgotemail/forgotemail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 
 const routes: Routes = [
  { path: 'register' , component:RegistrationComponent },
  { path: 'login' , component:LoginComponent },
  { path: 'resetpassword' , component:ResetpasswordComponent },
- { path: 'forgotemail' , component:ForgotemailComponent }
-
+ { path: 'forgotemail' , component:ForgotemailComponent },
+ {path:'dashboard',component:DashboardComponent},
+{path:'createnote', component:CreateNoteComponent}
 ];
 
 @NgModule({

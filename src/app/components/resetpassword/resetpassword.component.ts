@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
   selector: 'app-resetpassword',
@@ -8,10 +10,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ResetpasswordComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private userService: UserService){}
 
   resetPasswordForm!: FormGroup;
   submitted = true;
+  token:any;
 
 
   ngOnInit(): void {
@@ -19,8 +22,42 @@ export class ResetpasswordComponent implements OnInit {
       password: ['',[ Validators.required, Validators.minLength(6)]], 
       confirmPassword: ['', [Validators.required, Validators.requiredTrue]]
     });
+    this.token=this.route.snapshot.paramMap.get('token');
     }
-    resetpassword(){
-      console.log(this.resetPasswordForm.value);
+  
+    onSubmit() { 
+      this.submitted=true;
+      if(this.resetPasswordForm.valid)
+      {
+        console.log(this.resetPasswordForm.value,this.token);
+        let resetPassword={
+          newPassword:this.resetPasswordForm.value.password,
+          confirmPassword:this.resetPasswordForm.value.confirmPassword,       
+       }
+       this.userService.userResetPassword(resetPassword,this.token).subscribe((response:any)=>{
+         console.log(response)
+       })
+      }
+      else
+      {
+        console.log("invalid");
+      }
     }
-}
+  }
+  //   resetted()
+  //   {
+  //     this.submitted=true;
+  //     if(this.resetPasswordForm.value)
+  //     {
+  //       console.log(this.resetPasswordForm.value,this.token);
+  //       let reset={
+  //         newPassword:this.resetPasswordForm.value.password,
+  //         confirmPassword:this.resetPasswordForm.value.confirmPassword,
+  
+  //       }
+  //       this.userService.resetPassword(reset,this.token).subscribe((response:any)=>{console.log(response)})
+  //     }
+  //     else
+  //     console.log("invalid");
+  //   }
+  // }

@@ -1,0 +1,153 @@
+<div>
+    <mat-toolbar >
+        <button mat-icon-button (click)="snav.toggle()" class ="fundoo-icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div >
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" width="45">
+        </div>
+
+        <div class ="btn-txt">
+            Fundoo
+        </div>
+
+       <div>
+        <mat-card fxLayout="row" fxLayoutAlign="start center" style="margin-left: 5%;" >
+            <mat-icon style="opacity: 0.7; font-size: 21px;margin-top: 5px;">search</mat-icon>
+            <input type="text" name="search" placeholder="Search ..."
+                style="margin-left: 5px; opacity: 0.7; border: none; outline: none; font-size: 15px;">
+        </mat-card>
+       </div>
+
+        <div class ="refresh_tag" >
+            <button  matTooltip="Refresh" mat-icon-button  class = "refresh">
+                <mat-icon>refresh</mat-icon>
+              </button>
+        </div>
+        
+       <div class=>
+           <button class= "refresh" >
+               <img src = "../../assets/view_agenda_black_24dp.svg">
+           </button>
+        </div>
+          
+        <div class = "btn_list">
+            <button class= "refresh" >
+                <img src = "../../assets/settings_black_24dp.svg">
+            </button>
+         </div>
+
+         <div class = "app_list">
+            <button class= "refresh" >
+                <img src = "../../assets/apps_black_24dp.svg">
+            </button>
+         </div>
+
+         <div class = "prof_list">
+            <button class= "refresh" >
+                <img src = "../../assets/account_circle_black_24dp.svg">
+            </button>
+         </div>
+           
+    </mat-toolbar>
+    
+    <!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun"> -->
+        <!-- <mat-toolbar color="primary" class="example-toolbar">
+          <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+          <h1 class="example-app-name">Responsive App</h1>
+        </mat-toolbar> -->
+      
+        <mat-sidenav-container class="example-sidenav-container"
+                               [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+          <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                       [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+            <mat-nav-list>
+              <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+            </mat-nav-list>
+          </mat-sidenav>
+      
+          <mat-sidenav-content>
+            <p *ngFor="let content of fillerContent">{{content}}</p>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      <!-- </div> -->
+      
+      <!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
+    
+      
+    
+
+</div>
+
+
+
+
+
+
+
+
+  <!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+            <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+                fixedTopGap="56">
+                <mat-nav-list>
+                    <div class="Button" fxLayout="row">
+                        <mat-icon class="icon">lightbulb</mat-icon>
+                        <mat-list-item>Notes</mat-list-item> -->
+                    <!-- </div>
+                </mat-nav-list>
+            </mat-sidenav>
+          
+            </mat-sidenav-container> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="example-container" >
+    <mat-toolbar>
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="fundoo-icon">
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" width="45">
+        </div>
+        <h1 class="fundoo">Fundoo</h1>
+        <div class="Search">
+            <mat-form-field appearance="outline" [style.width.px]="600">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search">
+            </mat-form-field>
+        </div>
+        <div class="refresh"id="refresh" fxLayout="row">
+            <button mat-icon-button matTooltip="refresh" >
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <div class="Button" fxLayout="row">
+                    <mat-icon class="icon">lightbulb</mat-icon>
+                    <mat-list-item>Notes</mat-list-item>
+                </div>
+            </mat-nav-list>
+        </mat-sidenav>
+
+
+        <mat-sidenav-content>
+        </mat-sidenav-content> -->
+    <!-- </mat-sidenav-container>
+</div> -->

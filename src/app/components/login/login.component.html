@@ -1,7 +1,9 @@
-<div class = "cs-container">
+
+  <div class = "cs-container" >
+
   <meta charset="UTF-8">
   <title>Some Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   
 
     <h1>
@@ -14,7 +16,7 @@
     </h1>
 
     <h2>Sign in</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="login()" style="border:none">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="border:none">
     <div class ="tl-container">
       <mat-form-field  appearance="outline">
         <mat-label>Email</mat-label>
@@ -26,7 +28,7 @@
 
       <mat-form-field  appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="password" formControlName="passowrd" >
+        <input matInput placeholder="password" formControlName="password" >
         
        </mat-form-field>
     </div>

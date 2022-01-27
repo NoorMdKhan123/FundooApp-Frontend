@@ -8,9 +8,13 @@
     margin-right: 34%;
     padding-bottom: 7%;
     border: 1px solid lightgrey;
-    width: device-width;
+    justify-content: space-between;
+  flex-wrap: wrap;
    
    
+}
+@media screen and ( max-width: 1000px ) {
+  form { justify-content: center; }
 }
 form{
   border: none;
