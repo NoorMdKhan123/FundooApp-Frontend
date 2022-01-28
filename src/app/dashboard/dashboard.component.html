@@ -1,63 +1,129 @@
 <div>
-    <mat-toolbar >
-        <button mat-icon-button (click)="snav.toggle()" class ="fundoo-icon">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <div >
+    <mat-toolbar>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();" style="color: grey;">menu</mat-icon>
+        </button>
+        <div>
             <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" width="45">
         </div>
 
-        <div class ="btn-txt">
+        <div class="btn-txt">
             Fundoo
         </div>
 
-       <div>
-        <mat-card fxLayout="row" fxLayoutAlign="start center" style="margin-left: 5%;" >
-            <mat-icon style="opacity: 0.7; font-size: 21px;margin-top: 5px;">search</mat-icon>
-            <input type="text" name="search" placeholder="Search ..."
-                style="margin-left: 5px; opacity: 0.7; border: none; outline: none; font-size: 15px;">
-        </mat-card>
-       </div>
-
-        <div class ="refresh_tag" >
-            <button  matTooltip="Refresh" mat-icon-button  class = "refresh">
-                <mat-icon>refresh</mat-icon>
-              </button>
+        <div>
+            <mat-card fxLayout="row" fxLayoutAlign="start center" style="margin-left: 5%;">
+                <mat-icon style="opacity: 0.7; font-size: 21px;margin-top: 5px;">search</mat-icon>
+                <input type="text" name="search" placeholder="Search ..."
+                    style="margin-left: 5px; opacity: 0.7; border: none; outline: none; font-size: 15px;">
+            </mat-card>
         </div>
+
+        <div class="refresh_tag" id="refresh" fxLayout="row" >
+            <div class = "refrsh">
+                <button matTooltip="Refresh" mat-icon-button (click)="refreshButton()" class="a1">
+                    <mat-icon>refresh</mat-icon>
+                </button >
+            </div>
+            <div class="grid">
+                <button class ="a1">
+                    <img src="../../assets/view_agenda_black_24dp.svg">
+                </button>
+            </div  >
+            <div class="setting">
+                <button class="a1">
+                    <img src="../../assets/settings_black_24dp.svg">
+                </button>
+            </div>
+
+           <div class="app">
+            <button  class="a1" >
+                <img src="../../assets/apps_black_24dp.svg">
+            </button>
+           </div>
+            <div >
+                <button class="a1" >
+                    <img src="../../assets/account_circle_black_24dp.svg">
+                </button>
+            </div>
         
-       <div class=>
-           <button class= "refresh" >
-               <img src = "../../assets/view_agenda_black_24dp.svg">
-           </button>
+        
+        <!-- <button mat-icon-button matTooltip="grid">
+            <mat-icon>line_weight</mat-icon>
+        </button> -->
         </div>
-          
-        <div class = "btn_list">
-            <button class= "refresh" >
-                <img src = "../../assets/settings_black_24dp.svg">
-            </button>
-         </div>
 
-         <div class = "app_list">
-            <button class= "refresh" >
-                <img src = "../../assets/apps_black_24dp.svg">
+        <!-- <div >
+            <button class="refresh">
+                <img src="../../assets/view_agenda_black_24dp.svg">
             </button>
-         </div>
+        </div>
 
-         <div class = "prof_list">
-            <button class= "refresh" >
-                <img src = "../../assets/account_circle_black_24dp.svg">
+        <div class="btn_list">
+            <button class="refresh">
+                <img src="../../assets/settings_black_24dp.svg">
             </button>
-         </div>
-           
+        </div>
+
+        <div class="app_list">
+            <button class="refresh">
+                <img src="../../assets/apps_black_24dp.svg">
+            </button>
+        </div>
+
+        <div class="prof_list">
+            <button class="refresh">
+                <img src="../../assets/account_circle_black_24dp.svg">
+            </button>
+        </div> -->
+
     </mat-toolbar>
-    
+    <mat-sidenav-container style=" height: 88vh;">
+        <mat-sidenav #sidenav style="width: 240px;" mode="side" [opened]="true">
+            <div class="menu-container">
+                <mat-nav-list>
+                    <div>
+                        <button mat-button id="sidenav-button">
+                            <mat-icon id="sidenav-icon">lightbulb_outline</mat-icon>
+                            Notes
+                        </button>
+                    </div>
+                    <div>
+                        <button mat-button id="sidenav-button">
+                            <mat-icon id="sidenav-icon">notifications_none</mat-icon>
+                            Reminder
+                        </button>
+                    </div>
+                    <div>
+                        <button mat-button id="sidenav-button">
+                            <mat-icon id="sidenav-icon">archive</mat-icon>
+                            Archive
+                        </button>
+                    </div>
+                    <div>
+                        <button mat-button id="sidenav-button">
+                            <mat-icon id="sidenav-icon">delete</mat-icon>
+                            Trash
+                        </button>
+                    </div>
+                </mat-nav-list>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet>
+
+            </router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
     <!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun"> -->
-        <!-- <mat-toolbar color="primary" class="example-toolbar">
+    <!-- <mat-toolbar color="primary" class="example-toolbar">
           <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
           <h1 class="example-app-name">Responsive App</h1>
         </mat-toolbar> -->
-      
-        <mat-sidenav-container class="example-sidenav-container"
+
+    <!-- <mat-sidenav-container class="example-sidenav-container"
                                [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
           <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
@@ -69,13 +135,13 @@
           <mat-sidenav-content>
             <p *ngFor="let content of fillerContent">{{content}}</p>
           </mat-sidenav-content>
-        </mat-sidenav-container>
-      <!-- </div> -->
-      
-      <!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
-    
-      
-    
+        </mat-sidenav-container> -->
+    <!-- </div> -->
+
+    <!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
+
+
+
 
 </div>
 
@@ -86,14 +152,14 @@
 
 
 
-  <!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+<!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
             <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
                 fixedTopGap="56">
                 <mat-nav-list>
                     <div class="Button" fxLayout="row">
                         <mat-icon class="icon">lightbulb</mat-icon>
                         <mat-list-item>Notes</mat-list-item> -->
-                    <!-- </div>
+<!-- </div>
                 </mat-nav-list>
             </mat-sidenav>
           
@@ -149,5 +215,5 @@
 
         <mat-sidenav-content>
         </mat-sidenav-content> -->
-    <!-- </mat-sidenav-container>
+<!-- </mat-sidenav-container>
 </div> -->

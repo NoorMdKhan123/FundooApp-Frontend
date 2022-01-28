@@ -12,8 +12,9 @@ const routes: Routes = [
  { path: 'login' , component:LoginComponent },
  { path: 'resetpassword' , component:ResetpasswordComponent },
  { path: 'forgotemail' , component:ForgotemailComponent },
- {path:'dashboard',component:DashboardComponent},
-{path:'createnote', component:CreateNoteComponent}
+ { path:'dashboard',component:DashboardComponent},
+ { path:'createnote', component:CreateNoteComponent}
+
 ];
 
 @NgModule({

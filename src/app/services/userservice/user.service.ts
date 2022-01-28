@@ -68,4 +68,20 @@ headers : new HttpHeaders(
   console.log(reqData);
   return this.httpService.postService('/User/resetPassword',reqData, true, httpOptions)
 }
+userNoteCreation(reqData:any)
+{
+  {
+    let httpOptions=
+    {
+    headers : new HttpHeaders(
+      {
+        'Content-type':'application/json',
+        
+      }
+    )
+    }
+      console.log(reqData);
+      return this.httpService.postService('/User/rcreateNote',reqData, false, httpOptions)
+    }
+}
 }
