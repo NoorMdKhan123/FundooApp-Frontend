@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { UserService } from '../services/userservice/user.service';
+import { refresh } from "src/app/utility/util";
 
 
 
@@ -21,7 +22,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   refreshButton() {
-    this.refreshButton();
+    refresh();
   }
 
 }

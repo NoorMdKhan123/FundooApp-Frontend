@@ -19,6 +19,10 @@ import { CreateNoteComponent } from './create-note/create-note.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import { GetallComponent } from './getall/getall.component';
+import { DisplayNotesComponent } from './display-notes/display-notes.component';
+import { IconsComponent } from './icons/icons.component';
+
 
 
 
@@ -33,7 +37,11 @@ import {MatListModule} from '@angular/material/list';
     ForgotemailComponent,
     ResetpasswordComponent,
     DashboardComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    GetallComponent,
+    DisplayNotesComponent,
+    IconsComponent,
+    
   ],
   imports: [
     

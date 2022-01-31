@@ -6,14 +6,19 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { ForgotemailComponent } from './components/forgotemail/forgotemail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
+import { IconsComponent } from './icons/icons.component';
+import { GetallComponent } from './getall/getall.component';
 
 const routes: Routes = [
  { path: 'register' , component:RegistrationComponent },
  { path: 'login' , component:LoginComponent },
- { path: 'resetpassword' , component:ResetpasswordComponent },
+
  { path: 'forgotemail' , component:ForgotemailComponent },
+ { path: 'resetPassword/:token' , component:ResetpasswordComponent },
  { path:'dashboard',component:DashboardComponent},
- { path:'createnote', component:CreateNoteComponent}
+ { path:'createnote', component:CreateNoteComponent},
+ { path:'getallnotes', component:GetallComponent},
+ { path:'icons', component:IconsComponent}
 
 ];
 

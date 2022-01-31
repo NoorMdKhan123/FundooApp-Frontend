@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NotesService } from '../notes.service';
 import { UserService } from '../services/userservice/user.service';
 
 @Component({
@@ -12,12 +13,16 @@ export class CreateNoteComponent implements OnInit {
   noteForm!:FormGroup
   submitted=true;
   card:boolean = true;
-  constructor(private user:UserService,private form : FormBuilder ) { }
+  token:any
+  constructor(private form : FormBuilder, private note:NotesService ) { }
 
   ngOnInit(): void {
+
     this.noteForm=this.form.group({
       Title:[null, Validators.required]
+
     });
+    this.token=localStorage.getItem('token');
 
   }
   cardSwap()
@@ -36,10 +41,14 @@ export class CreateNoteComponent implements OnInit {
       Title:this.noteForm.value.title,
       message : this.noteForm.value.TakeNote
     }
+    this.note.userNoteCreation(note, this.token).subscribe((response:any)=> {
+      console.log(response);
+    } )
   }
   else
   {
     console.log("invalid");
   }
 }
+
 }

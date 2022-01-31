@@ -5,8 +5,11 @@ import { HttpService } from '../http/http.service';
   providedIn: 'root'
 })
 export class UserService {
+token:any
 
-  constructor(private httpService : HttpService ) { }
+  constructor(private httpService : HttpService ) {
+    // this.token=localStorage.getItem("token")
+   }
 
   userRegistration(reqData:any)
   {
@@ -23,19 +26,20 @@ let httpOptions=
     return this.httpService.postService('/User/register',reqData, false, httpOptions)
   }
   
-  userLogin(reqData:any)
+  userLogin(reqData:any, token : any)
   {
 let httpOptions=
 {
   headers : new HttpHeaders(
     {
       'Content-type':'application/json',
-      Authorization : 'token'
+       Authorization :'Bearer ' + token
+   
     }
   )
 }
     console.log(reqData);
-    return this.httpService.postService('/User/login',reqData, false, httpOptions)
+    return this.httpService.postService('/User/login',reqData, true, httpOptions)
   }
 
   userForgotPassword(reqData:any)
@@ -45,7 +49,7 @@ let httpOptions=
 headers : new HttpHeaders(
   {
     'Content-type':'application/json',
-    Authorization :  'token'
+    
   
   }
 )
@@ -61,27 +65,13 @@ let httpOptions=
 headers : new HttpHeaders(
   {
     'Content-type':'application/json',
-    Authorization : 'Beraer ' + token
+    Authorization : 'Bearer ' + token
   }
 )
 }
   console.log(reqData);
-  return this.httpService.postService('/User/resetPassword',reqData, true, httpOptions)
+  console.log("token",token);
+  return this.httpService.putService('/User/resetPassword',reqData, true, httpOptions)
 }
-userNoteCreation(reqData:any)
-{
-  {
-    let httpOptions=
-    {
-    headers : new HttpHeaders(
-      {
-        'Content-type':'application/json',
-        
-      }
-    )
-    }
-      console.log(reqData);
-      return this.httpService.postService('/User/rcreateNote',reqData, false, httpOptions)
-    }
-}
+
 }

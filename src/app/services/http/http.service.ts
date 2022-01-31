@@ -13,16 +13,18 @@ export class HttpService {
 
   postService(url:string='',payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
   {
+    console.log("Inside httpservice", payload);
      return this.http.post(this.BaseUrl + url, payload, tokenRequired && httpAuthOptions)
   }
    
-  putService(url:string='',payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
+  putService(url:string='',payload:any={},tokenRequired:boolean=true, httpAuthOptions:any={})
   {
-
+    console.log("Inside httpservice", payload);
+    return this.http.put(this.BaseUrl + url, payload, tokenRequired && httpAuthOptions)
   }
   getService(url:string='',tokenRequired:boolean=false, httpAuthOptions:any={})
   {
-
+    return this.http.post(this.BaseUrl + url, tokenRequired && httpAuthOptions)
   }
   deleteService(url:string='',payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
   {

@@ -20,7 +20,7 @@ export class ResetpasswordComponent implements OnInit {
   ngOnInit(): void {
     this.resetPasswordForm = this.formBuilder.group({
       password: ['',[ Validators.required, Validators.minLength(6)]], 
-      confirmPassword: ['', [Validators.required, Validators.requiredTrue]]
+      confirmPassword:  ['',[ Validators.required, Validators.minLength(6)]]
     });
     this.token=this.route.snapshot.paramMap.get('token');
     }
