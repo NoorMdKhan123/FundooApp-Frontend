@@ -7,10 +7,10 @@ import { HttpService } from './services/http/http.service';
 })
 export class NotesService {
 
-
+token : any;
   constructor( private httpService:HttpService) {
-    // this.token=localStorage.getItem("token")
-    // console.log(this.token)
+    this.token=localStorage.getItem("token")
+    
    
    }
   userNoteCreation(reqData:any, token:any)
@@ -21,28 +21,28 @@ export class NotesService {
     headers : new HttpHeaders(
       {
         'Content-type':'application/json',
-        'Authorization':'Bearer ' + token
+        Authorization:'Bearer ' + this.token
         
       }
     )
     }
       console.log(reqData);
-      return this.httpService.postService('/User/addNote',reqData, true, httpOptions)
+      return this.httpService.postService('/Notes',reqData, true, httpOptions)
     }
   }
-    getAllNOtes(token:any)
+    getAllNotes(token:any)
 {
   let httpOptions=
     {
     headers : new HttpHeaders(
       {
         'Content-type':'application/json',
-        'Authorization':'Bearer ' + token
+        Authorization:'Bearer ' + token
         
       }
     )
     }
-      return this.httpService.getService('/User/allnotes', true, httpOptions)
+      return this.httpService.getService('/Notes/allnotes', true, httpOptions)
     }
 
 

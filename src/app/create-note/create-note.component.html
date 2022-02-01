@@ -1,12 +1,12 @@
-<mat-card *ngIf="!card" class="matcard">
-    <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
+<!-- <mat-card *ngIf="!card" class="matcard">
+    <input placeholder="Take a note..." class="input"  >
 </mat-card>
 <mat-card class="list-view-mat-card" *ngIf="card">
-    <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="noteForm" ="onSubmit()">
         <input type="text" placeholder="Title" name="title" formControlName="Title">
         <p>
-            <textarea name="content" placeholder="Take a note"></textarea>
-            <!-- <textarea name="content" placeholder="Take a note" formControlName="TakeNote"></textarea> -->
+            <!-- <textarea name="content" placeholder="Take a note"></textarea> -->
+            <!-- <textarea name="content" placeholder="Take a note" formControlName="TakeNote"></textarea>
         </p>
         <div class="border">
             <button mat-icon-button>
@@ -24,7 +24,40 @@
             <button mat-icon-button>
                 <mat-icon>archive</mat-icon>
             </button>
-            <button mat-button class="close" (click)="cardSwap()">
+            <button mat-button class="close" (click)="cardSwap()" (click)="onSubmit()">
+                Close
+            </button>
+        </div>
+    </form>
+</mat-card> --> 
+
+<mat-card *ngIf="!card" class="matcard">
+    <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
+</mat-card>
+<mat-card class="list-view-mat-card" *ngIf="card">
+    <form [formGroup]="createNoteForm">
+        <input type="text" placeholder="Title" name="title" formControlName="title">
+        <p>
+            <textarea name="content" placeholder="Take a note" formControlName="takeNote"></textarea>
+        </p>
+        
+        <div class="border"> <button mat-icon-button>
+            <mat-icon>notifications_paused</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>person_add</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>color_lens</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>crop_original</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>archive</mat-icon>
+        </button>
+            
+            <button mat-stroked-button class="close" (click)="onSubmitted()">
                 Close
             </button>
         </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NotesService } from '../notes.service';
 import { UserService } from '../services/userservice/user.service';
 
@@ -9,46 +10,44 @@ import { UserService } from '../services/userservice/user.service';
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
-
-  noteForm!:FormGroup
-  submitted=true;
-  card:boolean = true;
-  token:any
-  constructor(private form : FormBuilder, private note:NotesService ) { }
+  createNoteForm!: FormGroup;
+  submitted=false;
+  card: boolean = false;
+  token:any;
+  constructor(private formBuilder: FormBuilder,private notesService:NotesService,private route:Router) { }
 
   ngOnInit(): void {
-
-    this.noteForm=this.form.group({
-      Title:[null, Validators.required]
-
+    this.createNoteForm = this.formBuilder.group({
+      title: [null, Validators.required],
+      takeNote:[null,Validators.required]
     });
     this.token=localStorage.getItem('token');
-
   }
-  cardSwap()
-  {
+  cardSwap() {
     console.log(this.card);
-    return this.card == true ? (this.card = false) : (this.card = true);
+    return this.card === true ? (this.card = false) : (this.card = true);
   }
-  onSubmit()
+
+  onSubmitted()
   {
-    this.submitted = true;
-    if(this.noteForm.valid)
+    this.submitted=true;
+    if(this.createNoteForm.value)
     {
-    console.log(this.noteForm.value);
-    let note = 
-    {
-      Title:this.noteForm.value.title,
-      message : this.noteForm.value.TakeNote
-    }
-    this.note.userNoteCreation(note, this.token).subscribe((response:any)=> {
-      console.log(response);
-    } )
-  }
-  else
-  {
+      console.log(this.createNoteForm.value);
+      let requestedData={
+        title:this.createNoteForm.value.title,
+        takeANote:this.createNoteForm.value.takeNote
+      }
+      this.notesService.userNoteCreation(requestedData,this.token).subscribe((response:any)=>{console.log(response)
+       this.card = false;
+        if(response.success == true)
+        {
+         console.log(response);
+        
+        }
+      })
+    } 
+    else
     console.log("invalid");
   }
-}
-
 }

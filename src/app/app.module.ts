@@ -22,6 +22,9 @@ import {MatListModule} from '@angular/material/list';
 import { GetallComponent } from './getall/getall.component';
 import { DisplayNotesComponent } from './display-notes/display-notes.component';
 import { IconsComponent } from './icons/icons.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 
 
@@ -40,7 +43,9 @@ import { IconsComponent } from './icons/icons.component';
     CreateNoteComponent,
     GetallComponent,
     DisplayNotesComponent,
-    IconsComponent,
+    IconsComponent
+    
+    
     
   ],
   imports: [
@@ -50,6 +55,7 @@ import { IconsComponent } from './icons/icons.component';
     MatInputModule,
     HttpClientModule,
     AppRoutingModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatCardModule,
@@ -57,7 +63,8 @@ import { IconsComponent } from './icons/icons.component';
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    
   ],
   
   providers: [],

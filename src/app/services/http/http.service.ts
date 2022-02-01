@@ -11,22 +11,22 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  postService(url:string='',payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
+  postService(url:any,data:any,token:boolean=true, httpAuthOptions:any)
   {
-    console.log("Inside httpservice", payload);
-     return this.http.post(this.BaseUrl + url, payload, tokenRequired && httpAuthOptions)
+    
+     return this.http.post(this.BaseUrl + url, data, token && httpAuthOptions)
   }
    
-  putService(url:string='',payload:any={},tokenRequired:boolean=true, httpAuthOptions:any={})
+  putService(url:any,payload:any={},tokenRequired:boolean=true, httpAuthOptions:any={})
   {
     console.log("Inside httpservice", payload);
     return this.http.put(this.BaseUrl + url, payload, tokenRequired && httpAuthOptions)
   }
-  getService(url:string='',tokenRequired:boolean=false, httpAuthOptions:any={})
+  getService(url:any,tokenRequired:boolean=true, httpAuthOptions:any={})
   {
-    return this.http.post(this.BaseUrl + url, tokenRequired && httpAuthOptions)
+    return this.http.get(this.BaseUrl + url, tokenRequired && httpAuthOptions)
   }
-  deleteService(url:string='',payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
+  deleteService(url:any,payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
   {
 
   }

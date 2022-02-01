@@ -10,16 +10,17 @@ import { IconsComponent } from './icons/icons.component';
 import { GetallComponent } from './getall/getall.component';
 
 const routes: Routes = [
- { path: 'register' , component:RegistrationComponent },
- { path: 'login' , component:LoginComponent },
-
- { path: 'forgotemail' , component:ForgotemailComponent },
- { path: 'resetPassword/:token' , component:ResetpasswordComponent },
- { path:'dashboard',component:DashboardComponent},
- { path:'createnote', component:CreateNoteComponent},
- { path:'getallnotes', component:GetallComponent},
- { path:'icons', component:IconsComponent}
-
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgotemail', component: ForgotemailComponent },
+  { path: 'resetPassword/:token', component: ResetpasswordComponent },
+  
+ {path: 'dashboard', component: DashboardComponent,
+    children: [
+      { path: '', redirectTo: "/dashboard/notes", pathMatch: 'full' },
+      { path: 'notes', component: GetallComponent },
+    ]
+  }
 ];
 
 @NgModule({

@@ -1,8 +1,8 @@
-<div>
+<div class="main-container">
     <div>
         <mat-toolbar>
             <button mat-icon-button>
-                <mat-icon (click)="sidenav.toggle();" style="color: grey;">menu</mat-icon>
+                <mat-icon (click)="onToolbarMenuToggle" style="color: grey;">menu</mat-icon>
             </button>
             <div>
                 <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" width="45">
@@ -99,9 +99,7 @@
         </mat-sidenav-content>
     </mat-sidenav-container>
    </div>
-    <div  >
-        <app-create-note></app-create-note>
-       </div>
+   
 
     
 

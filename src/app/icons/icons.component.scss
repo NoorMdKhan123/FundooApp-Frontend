@@ -1,0 +1,17 @@
+.border {
+    border: 5px solid transparent;
+    height: 5px;
+    width: 20%;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    background-color: transparent
+  }
+  button{
+      margin: 5px;
+      border:none;
+      background: #fff;
+      opacity:0.6;
+    
+  }
