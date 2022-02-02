@@ -44,7 +44,23 @@ token : any;
     }
       return this.httpService.getService('/Notes/allnotes', true, httpOptions)
     }
-
+    updateNotes(reqData:any, token:any)
+    {
+      
+        let httpOptions=
+        {
+        headers : new HttpHeaders(
+          {
+            'Content-type':'application/json',
+            Authorization:'Bearer ' + this.token
+            
+          }
+        )
+        }
+          console.log(reqData);
+          return this.httpService.putService('/Notes/'+reqData.notesId,reqData, true, httpOptions)
+        }
+      
 
 
 }

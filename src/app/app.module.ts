@@ -23,6 +23,7 @@ import { GetallComponent } from './getall/getall.component';
 import { DisplayNotesComponent } from './display-notes/display-notes.component';
 import { IconsComponent } from './icons/icons.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UpdatenotesComponent } from './updatenotes/updatenotes.component';
 
 
 
@@ -32,7 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   
-  declarations: [
+  declarations: [	
     
     AppComponent,
     LoginComponent,
@@ -43,11 +44,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     CreateNoteComponent,
     GetallComponent,
     DisplayNotesComponent,
-    IconsComponent
-    
-    
-    
-  ],
+    IconsComponent,
+      UpdatenotesComponent
+   ],
   imports: [
     
     FormsModule,

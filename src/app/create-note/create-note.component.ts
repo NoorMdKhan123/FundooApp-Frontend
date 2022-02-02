@@ -31,7 +31,7 @@ export class CreateNoteComponent implements OnInit {
   onSubmitted()
   {
     this.submitted=true;
-    if(this.createNoteForm.value)
+    if(this.createNoteForm.valid)
     {
       console.log(this.createNoteForm.value);
       let requestedData={
@@ -48,6 +48,7 @@ export class CreateNoteComponent implements OnInit {
       })
     } 
     else
+    this.cardSwap();
     console.log("invalid");
   }
 }

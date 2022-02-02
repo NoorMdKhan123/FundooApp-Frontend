@@ -17,7 +17,7 @@ export class HttpService {
      return this.http.post(this.BaseUrl + url, data, token && httpAuthOptions)
   }
    
-  putService(url:any,payload:any={},tokenRequired:boolean=true, httpAuthOptions:any={})
+  putService(url:any,payload:any,tokenRequired:boolean=true, httpAuthOptions:any)
   {
     console.log("Inside httpservice", payload);
     return this.http.put(this.BaseUrl + url, payload, tokenRequired && httpAuthOptions)
