@@ -1,21 +1,35 @@
-
-<div class="border">
+<div class="conatiner">
     <button mat-icon-button>
         <mat-icon>notifications_paused</mat-icon>
     </button>
     <button mat-icon-button>
         <mat-icon>person_add</mat-icon>
     </button>
-    <button mat-icon-button>
-        <mat-icon>color_lens</mat-icon>
+
+    <button [matMenuTriggerFor]="colormenu" mat-icon-button>
+        <mat-icon>palette</mat-icon>
     </button>
+    <mat-menu #colormenu="matMenu">
+        <div class="card">
+            <div *ngFor="let noteColor of colors">
+                <button class="Color" mat-mini-fab [style.background]="noteColor?.bgColorValue"
+                    (click)="colorNotes(noteColor?.bgColorValue)"></button>
+            </div>
+        </div>
+    </mat-menu>
     <button mat-icon-button>
         <mat-icon>image</mat-icon>
     </button>
-    <button mat-icon-button>
-        <mat-icon>archive</mat-icon>
+    <button>
+        <mat-icon (click)="archiveNotes()">archive</mat-icon>
+
     </button>
-    <button mat-icon-button>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+        <span (click)="trashNotes()">Delete Notes</span>
+    </mat-menu>
 </div>

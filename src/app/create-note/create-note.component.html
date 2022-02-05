@@ -30,7 +30,7 @@
         </div>
     </form>
 </mat-card> --> 
-
+<div>
 <mat-card  *ngIf="!card" class="matcard">
     <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
 </mat-card>
@@ -41,25 +41,14 @@
             <textarea name="content" placeholder="Take a note" formControlName="takeNote"></textarea>
         </p>
         
-        <div class="border"> <button mat-icon-button>
-            <mat-icon>notifications_paused</mat-icon>
-        </button>
-        <button mat-icon-button>
-            <mat-icon>person_add</mat-icon>
-        </button>
-        <button mat-icon-button>
-            <mat-icon>color_lens</mat-icon>
-        </button>
-        <button mat-icon-button>
-            <mat-icon>crop_original</mat-icon>
-        </button>
-        <button mat-icon-button>
-            <mat-icon>archive</mat-icon>
-        </button>
-            
-            <button mat-stroked-button class="close" (click)="onSubmitted()">
-                Close
-            </button>
+     <div style=" margin-top: -10px; width:60%">  
+         
+        <app-icons></app-icons>
+           
         </div>
+        <button  class="close" (click)="onSubmitted()">
+            Close
+        </button>
     </form>
 </mat-card>
+</div>

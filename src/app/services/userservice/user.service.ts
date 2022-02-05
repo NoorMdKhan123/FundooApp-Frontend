@@ -74,4 +74,5 @@ headers : new HttpHeaders(
   return this.httpService.putService('/User/resetPassword',reqData, true, httpOptions)
 }
 
+
 }

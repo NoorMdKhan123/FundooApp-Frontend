@@ -13,23 +13,24 @@
   {
     margin: 5%;
   }
+  
+  
   .pin{
     margin-left: 230px;
     margin-top: 3%;
     opacity: 0.54;
     width: 25px;
     height: 25px;
+    border:none;
+    background: transparent;
   
   }
   .getAllNotes{
     width: 100%;
     height: 110%;
     background-color:white;
-    // height: auto;
     border: 0.5px solid darkblue;
-    //box-shadow: 0 1px 7px rgb(126, 124, 124);
     border-radius: 5px;
-    // box-sizing: border-box;
     margin-left: 2px;
   }
   .displayNotes{
@@ -43,4 +44,21 @@
   .heading{
     opacity: 0.8;
   }
-  
+  .visible
+  {
+    visibility: visible;
+  }
+//   .mat-card
+//   {
+//  width:250px;
+//  height: auto;
+
+//   }
+
+// .pindiv
+// {
+//   @media (max-width: 800px) {
+//     .flex-item-right, .flex-item-left {
+//       flex: 100%;
+//     }
+//   }

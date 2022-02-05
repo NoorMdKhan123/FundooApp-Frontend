@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { UserService } from '../services/userservice/user.service';
 import { refresh } from "src/app/utility/util";
+import { Router } from '@angular/router';
+import { DataserviceService } from '../services/dataservice/dataservice.service';
 
 
 
@@ -17,7 +19,7 @@ export class DashboardComponent implements OnInit {
   submitted = true;
   isMenuOpen=true;
   contentMargin=200;
-  constructor(private formBuilder: FormBuilder,private user: UserService) {
+  constructor(private formBuilder: FormBuilder,private user: UserService, private route:Router, private dataservice : DataserviceService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +36,16 @@ export class DashboardComponent implements OnInit {
   }
   refreshButton() {
     refresh();
+  }
+  
+  notes(){
+    this.route.navigateByUrl('dashboard/notes')
+  }
+  archive(){
+    this.route.navigateByUrl('dashboard/archivenotes')
+  }
+  trash(){
+    this.route.navigateByUrl('dashboard/deletenotes')
   }
 
 

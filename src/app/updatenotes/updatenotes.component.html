@@ -6,18 +6,39 @@
   <mat-label>Favorite food</mat-label>
   <input {{desc}}>
 </mat-form-field> -->
-<mat-card>
-  <form>
-      <input type="text" placeholder="Title" name="title" [(ngModel)]="title">
-      <p>
-          <textarea name="content" placeholder="Take a note" [(ngModel)]="message"></textarea>
-      </p>
-      
-      <div class="border">
-          <app-icons></app-icons>
-          <button mat-stroked-button class="close" (click)="onSubmitted()">
-              Close
-          </button>
-      </div>
-  </form>
+<!-- <div >
+  <mat-card class ="container">
+  
+    <input type="text" placeholder="Title" name="title" [(ngModel)]="title">
+    <p>
+        <textarea name="content" placeholder="Take a note" [(ngModel)]="message"></textarea>
+    </p>
+    
+    <div class="border">
+        <app-icons></app-icons>
+        <button mat-stroked-button class="close" (click)="onSubmitted()">
+            Close
+        </button>
+    </div>
+
 </mat-card>
+</div> -->
+
+
+<div class="box">
+  
+  <mat-card-title fxLayout="row" >
+    <input class="title" matInput type="text" [(ngModel)]="title" />
+    <mat-icon matTooltip="Pin note" class= " pin" >push_pin</mat-icon>
+</mat-card-title>
+
+<mat-card-subtitle >
+    <input class="subtitle"matInput type="text" [(ngModel)]="message" />
+</mat-card-subtitle>
+
+<mat-card-content >
+    <app-icons></app-icons>
+    <button  mat-stroked-button class="close" (click)="onSubmitted()">Close</button>
+</mat-card-content>
+
+</div>

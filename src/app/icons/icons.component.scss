@@ -5,13 +5,88 @@
     top: 20px;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
+    background-color: transparent
+  }
+ 
+  .archivebtn
+  {
+    height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid red;
+  }
+  .example-button-row button,
+.example-button-row a {
+  margin-right: px;
+}
+.border {
+    border: 5px solid transparent;
+    height: 5px;
+    width: 20%;
+    top: 20px;
+    display: flex;
+    align-items: center;
     background-color: transparent
   }
   button{
-      margin: 5px;
+       margin: 3px;
       border:none;
-      background: #fff;
+      background: transparent;
       opacity:0.6;
+      
+
+      
+      
+  }
+.Color
+{
+  display: flex;
+  flex-direction: row;
+    width:30px;
+    height:30px ;
+    border-radius: 60%;
+    
+    
+}
+  .matMenu{
+    height: 20px;
+    margin-bottom: 90px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button:hover{
+    visibility: visible;
+  }
+
+.icon:hover{
+    visibility: visible;
+    opacity: 0.5;
+    color: black;
+}
+.container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}
+.card:hover{
+  
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     
   }
+
+.card{
+  display: flex;
+    flex-direction: row;
+
+}

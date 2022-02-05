@@ -24,6 +24,9 @@ import { DisplayNotesComponent } from './display-notes/display-notes.component';
 import { IconsComponent } from './icons/icons.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdatenotesComponent } from './updatenotes/updatenotes.component';
+import { TrashnotesComponent } from './trashnotes/trashnotes.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ArchivenotesComponent } from './archivenotes/archivenotes.component';
 
 
 
@@ -33,7 +36,7 @@ import { UpdatenotesComponent } from './updatenotes/updatenotes.component';
 
 @NgModule({
   
-  declarations: [	
+  declarations: [			
     
     AppComponent,
     LoginComponent,
@@ -45,7 +48,9 @@ import { UpdatenotesComponent } from './updatenotes/updatenotes.component';
     GetallComponent,
     DisplayNotesComponent,
     IconsComponent,
-      UpdatenotesComponent
+      UpdatenotesComponent,
+      TrashnotesComponent,
+      ArchivenotesComponent
    ],
   imports: [
     
@@ -63,7 +68,7 @@ import { UpdatenotesComponent } from './updatenotes/updatenotes.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    
+    MatMenuModule
   ],
   
   providers: [],

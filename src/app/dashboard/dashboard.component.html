@@ -65,7 +65,7 @@
             <div class="menu-container">
                 <mat-nav-list>
                     <div>
-                        <button mat-button id="sidenav-button">
+                        <button (click)=" notes()"  id="sidenav-button">
                             <mat-icon id="sidenav-icon">lightbulb_outline</mat-icon>
                             Notes
                         </button>
@@ -77,13 +77,13 @@
                         </button>
                     </div>
                     <div>
-                        <button mat-button id="sidenav-button">
+                        <button (click)="archive()" id="sidenav-button">
                             <mat-icon id="sidenav-icon">archive</mat-icon>
-                            Archive
+                           Archive
                         </button>
                     </div>
                     <div>
-                        <button mat-button id="sidenav-button">
+                        <button (click)="trash()" id="sidenav-button">
                             <mat-icon id="sidenav-icon">delete</mat-icon>
                             Trash
                         </button>

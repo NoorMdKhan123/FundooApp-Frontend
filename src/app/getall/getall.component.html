@@ -1,5 +1,6 @@
 <div>
-    <app-create-note></app-create-note>
+    <app-create-note (autoRefreshEvent)="dataReceived($event)"></app-create-note>
+    
 </div> 
 <div>
     <app-display-notes [notesArraylist]="notelist"></app-display-notes>

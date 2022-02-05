@@ -1,36 +1,29 @@
-<!-- <div class="displayNotes">
-  <div *ngFor="let notes of notesArraylist;" class="getAllNotes">
-      <button class="pinbutton" >
-          <img class="pin" src="../../../src/assets/push_pin_black_24dp.svg" alt="">
-        </button>
-        <h2 class="heading">{{notes.title}}</h2>
-        <p>{{notes.takeANote}}</p>
-        
-  </div>
-</div> -->
+<div style="background-color: white" fxLayout="row wrap" fxLayoutGap="25px grid" fxLayoutAlign="start center">
+  <div *ngFor="let notes of notesArraylist;">
 
 
-
-<div style ="background-color: white"  fxLayout="row wrap" fxLayoutGap="25px grid" fxLayoutAlign="start center">
-  <div fxFlex=25% fxFlex.xs=100% *ngFor="let notes of notesArraylist;">
-    
-      <div  class="container">
-        <button class="pinbutton">
-          <img class="pin" src="../../assets/push_pin_black_24dp.svg"  alt="">
-        </button>
-        <div class = "pad">
-          <mat-card-title  (click)="openDialog(notes)">
-            {{notes.title }}
+    <div class="container">
+      <mat-card [style.background]="notes.colour">
+        <div >
+          <button  [style.background]="notes.colour" class="pinbutton">
+            <img  class="pin" src="../../assets/push_pin_black_24dp.svg" alt="">
+          </button>
+        </div>
+        <div class="pad">
+          <mat-card-title (click)="openDialog(notes)">
+            {{notes.title}}
           </mat-card-title>
-          <mat-card-subtitle  (click)="openDialog(notes)">
+          <mat-card-subtitle (click)="openDialog(notes)">
             {{ notes.takeANote }}
+
           </mat-card-subtitle>
           <mat-card-content>
-            <app-icons></app-icons> 
+            <app-icons  class = "visible" [NotesCard]="notes" (changeColorNote)="messageFromNote($event)"></app-icons>
           </mat-card-content>
         </div>
-      </div>
-    
+      </mat-card>
+    </div>
+
   </div>
 </div>
 
@@ -77,15 +70,15 @@
 <!-- <div class="section" fxLayout="row wrap" fxLayoutGap="15px grid" fxLayoutAlign="start center">
 
     <!-- <div fxFlex=25% fxFlex.xs=100%  *ngFor="let note1 of notesArraylist;"   >  -->
-      
-     <!-- <mat-card class="example-card">
+
+<!-- <mat-card class="example-card">
        <!-- <mat-card-header> -->
-         <!-- <mat-card-title>
+<!-- <mat-card-title>
            <!-- title -->
-           <!-- {{note1.title }} string interpolation is used here which shows us data in string -->
-           
- 
-           <!-- <button class="pinbutton" >
+<!-- {{note1.title }} string interpolation is used here which shows us data in string -->
+
+
+<!-- <button class="pinbutton" >
              <img class="pin" src="../../../src/assets/push_pin_black_24dp.svg" alt="">
    
            </button>
@@ -94,10 +87,10 @@
  
          <!-- <mat-card-subtitle>
            <!-- description -->
-           <!-- {{ note1.description }} -->
-         <!-- </mat-card-subtitle> -->
-         
-       <!-- </mat-card-header> -->
+<!-- {{ note1.description }} -->
+<!-- </mat-card-subtitle> -->
+
+<!-- </mat-card-header> -->
 <!--        
        <mat-card-content>
            <app-icons></app-icons>
@@ -111,4 +104,3 @@
      </mat-card>
     </div>
     -->
- 

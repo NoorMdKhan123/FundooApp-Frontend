@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NotesService } from '../notes.service';
-import { UserService } from '../services/userservice/user.service';
+
+import { NotesService } from '../services/notesservice/notes.service';
+
 
 @Component({
   selector: 'app-create-note',
@@ -14,6 +15,7 @@ export class CreateNoteComponent implements OnInit {
   submitted=false;
   card: boolean = false;
   token:any;
+  @Output() autoRefreshEvent = new  EventEmitter<string>();
   constructor(private formBuilder: FormBuilder,private notesService:NotesService,private route:Router) { }
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class CreateNoteComponent implements OnInit {
     console.log(this.card);
     return this.card === true ? (this.card = false) : (this.card = true);
   }
+
 
   onSubmitted()
   {
@@ -42,9 +45,12 @@ export class CreateNoteComponent implements OnInit {
        this.card = false;
         if(response.success == true)
         {
+
          console.log(response);
+
         
         }
+        this.autoRefreshEvent.emit(response)
       })
     } 
     else
