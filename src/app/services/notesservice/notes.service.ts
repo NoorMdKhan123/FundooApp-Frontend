@@ -1,3 +1,4 @@
+
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
@@ -102,7 +103,22 @@ export class NotesService {
     console.log("token",token);
     return this.httpService.putService('/Notes/color/'+ data.notesIdList,data, true, httpOptions)
   }
+deleteNote(data:any, token:any)
+{
+  let httpOptions=
+  {
+  headers : new HttpHeaders(
+    {
+      'Content-type':'application/json',
+      Authorization : 'Bearer ' + token
+    }
+  )
+  }
+    console.log(data);
+    console.log("token",token);
+    return this.httpService.deleteService('/Notes/'+ data.notesIdList,null, true, httpOptions)
 
+}
 
 
 

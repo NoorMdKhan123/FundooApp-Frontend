@@ -4,12 +4,11 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotemailComponent } from './components/forgotemail/forgotemail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { CreateNoteComponent } from './create-note/create-note.component';
-import { IconsComponent } from './icons/icons.component';
-import { GetallComponent } from './getall/getall.component';
-import { TrashnotesComponent } from './trashnotes/trashnotes.component';
-import { ArchivenotesComponent } from './archivenotes/archivenotes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { GetallComponent } from './components/getall/getall.component';
+import { TrashnotesComponent } from './components/trashnotes/trashnotes.component';
+import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
 
 
 const routes: Routes = [

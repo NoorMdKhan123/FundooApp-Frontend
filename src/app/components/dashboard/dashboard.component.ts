@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
-import { UserService } from '../services/userservice/user.service';
+import { UserService } from '../../services/userservice/user.service';
 import { refresh } from "src/app/utility/util";
 import { Router } from '@angular/router';
-import { DataserviceService } from '../services/dataservice/dataservice.service';
+import { DataserviceService } from '../../services/dataservice/dataservice.service';
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { NotesService } from '../services/notesservice/notes.service';
+import { NotesService } from '../../services/notesservice/notes.service';
 
 @Component({
   selector: 'app-getall',

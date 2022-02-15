@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../services/notesservice/notes.service';
-import { DataserviceService } from '../services/dataservice/dataservice.service';
+import { NotesService } from '../../services/notesservice/notes.service';
+import { DataserviceService } from '../../services/dataservice/dataservice.service';
 
 @Component({
   selector: 'app-archivenotes',
@@ -25,7 +25,7 @@ export class ArchivenotesComponent implements OnInit {
       console.log(response.data)
 
       this.archiveListData = response.notes.filter((result: any) => {
-        this.list = result.isArchive=== true
+        this.list = result.isArchive === true
         return this.list
       })
       console.log("Trashed Notes:")

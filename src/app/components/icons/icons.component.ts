@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { NotesService } from '../services/notesservice/notes.service';
+import { NotesService } from '../../services/notesservice/notes.service';
 
 @Component({
   selector: 'app-icons',
@@ -11,6 +11,7 @@ export class IconsComponent implements OnInit {
   @Input() NotesCard: any
   @Output() changeColorNote = new EventEmitter<any>();
   token: any
+  showIcons : boolean = true;
 
   constructor(private note: NotesService) { }
 
@@ -62,7 +63,7 @@ export class IconsComponent implements OnInit {
     let reqData =
     {
       notesIdList: [this.NotesCard.notesId],
-      isArcive: false
+      isArchive: false
     }
     this.note.archiveNotes(reqData, this.token).subscribe((response: any) => {
       console.log("notes is archived");
@@ -89,6 +90,36 @@ export class IconsComponent implements OnInit {
     window.location.reload();
 
   }
+  deletePermanently()
+  {
+    console.log("calling trash api", this.NotesCard.notesId)
+    let reqData =
+    {
+      notesIdList: [this.NotesCard.notesId],
+      
+    }
+    this.note.deleteNote(reqData, this.token).subscribe((response: any) => {
+      console.log("notes is deleted");
+      console.log(response)
+
+    })
+    
+
+  }
+  restorenote()
+    {
+      console.log("calling restore api")
+      let reqData =
+      {
+        notesIdList: [this.NotesCard.notesId],
+        isTrash: false
+      }
+      this.note.trashNotes(reqData, this.token).subscribe((response: any) => {
+        console.log("notes is restored");
+        console.log(response)
+  
+      })
+    }
 
 
 }

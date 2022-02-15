@@ -31,24 +31,26 @@
     </form>
 </mat-card> --> 
 <div>
-<mat-card  *ngIf="!card" class="matcard">
-    <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
-</mat-card>
-<mat-card class="list-view-mat-card" *ngIf="card">
-    <form style ="background-color: white"  [formGroup]="createNoteForm">
-        <input type="text" placeholder="Title" name="title" formControlName="title">
-        <p>
-            <textarea name="content" placeholder="Take a note" formControlName="takeNote"></textarea>
-        </p>
-        
-     <div style=" margin-top: -10px; width:60%">  
-         
-        <app-icons></app-icons>
+  <mat-card  *ngIf="!card" class="matcard">
+      <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
+      
+  </mat-card>
+  <mat-card class="list-view-mat-card" *ngIf="card">
+      <form style ="background-color: white"  [formGroup]="createNoteForm">
+          <input type="text" placeholder="Title" name="title" formControlName="title">
+          <p>
+              <textarea name="content" placeholder="Take a note" formControlName="takeNote"></textarea>
+          </p>
+          
+       <div style=" margin-top: -10px; width:60%; ">  
            
-        </div>
-        <button  class="close" (click)="onSubmitted()">
-            Close
-        </button>
-    </form>
-</mat-card>
-</div>
+          <app-icons [NotesCard]="{isTrash:false,isArchive:false}"
+          ></app-icons>
+             
+          </div>
+          <button  class="close" (click)="onSubmitted()">
+              Close
+          </button>
+      </form>
+  </mat-card>
+  </div>

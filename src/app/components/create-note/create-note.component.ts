@@ -1,8 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotesService } from 'src/app/services/notesservice/notes.service';
 
-import { NotesService } from '../services/notesservice/notes.service';
+
 
 
 @Component({

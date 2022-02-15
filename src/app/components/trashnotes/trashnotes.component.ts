@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NotesService } from '../services/notesservice/notes.service';
-import { DataserviceService } from '../services/dataservice/dataservice.service';
+import { NotesService } from '../../services/notesservice/notes.service';
+import { DataserviceService } from '../../services/dataservice/dataservice.service';
 
 @Component({
   selector: 'app-trashnotes',

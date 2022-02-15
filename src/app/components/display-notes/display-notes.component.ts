@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NotesService } from '../services/notesservice/notes.service';
+import { NotesService } from '../../services/notesservice/notes.service';
 import { UpdatenotesComponent } from '../updatenotes/updatenotes.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DataserviceService } from '../services/dataservice/dataservice.service';
+import { DataserviceService } from '../../services/dataservice/dataservice.service';
 
 @Component({
   selector: 'app-display-notes',  
@@ -14,7 +14,7 @@ export class DisplayNotesComponent implements OnInit {
   @Input() notesArraylist:any;
   title:any;
   message:any;
-  constructor(private user: NotesService, private dialog: MatDialog, private dataService : DataserviceService) { 
+  constructor(private user: NotesService, private dialog: MatDialog) { 
     
   }
   ngOnInit(): void {

@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+
 
 
 @Injectable({
@@ -26,9 +27,9 @@ export class HttpService {
   {
     return this.http.get(this.BaseUrl + url, tokenRequired && httpAuthOptions)
   }
-  deleteService(url:any,payload:any={},tokenRequired:boolean=false, httpAuthOptions:any={})
+  deleteService(url:any,payload:any={},tokenRequired:boolean=true, httpAuthOptions:any={})
   {
-
+    return this.http.delete(this.BaseUrl + url, tokenRequired && httpAuthOptions)
   }
   
 }

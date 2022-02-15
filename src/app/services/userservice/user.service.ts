@@ -18,7 +18,7 @@ let httpOptions=
   headers : new HttpHeaders(
     {
       'Content-type':'application/json',
-      Authorization : 'token'
+     'Authorization': 'token'
     }
   )
 }
@@ -26,14 +26,16 @@ let httpOptions=
     return this.httpService.postService('/User/register',reqData, false, httpOptions)
   }
   
-  userLogin(reqData:any, token : any)
+  userLogin(reqData:any, token:any)
   {
 let httpOptions=
 {
+  
   headers : new HttpHeaders(
     {
       'Content-type':'application/json',
        Authorization :'Bearer ' + token
+       
    
     }
   )
